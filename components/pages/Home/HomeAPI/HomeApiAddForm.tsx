@@ -6,8 +6,11 @@ import useStorage from '../../../hooks/useStorage';
 import useInputController from '../../../hooks/useInputController';
 import SuccessOverlay from '../../../ui/SuccessOverlay';
 import usePostApi from '../../../hooks/api/usePostApi';
+import { useDispatch } from 'react-redux';
+import { setApiKey } from '../../../../store/slices/appSlice';
 
 const HomeApiAddForm = () => {
+  const dispatch = useDispatch();
   const { encryptAndSave } = useStorage();
   const { post, loading } = usePostApi();
   const [isSuccess, setIsSuccess] = useState(false);
@@ -57,7 +60,9 @@ const HomeApiAddForm = () => {
       return;
     }
     encryptAndSave(apiKeyField.value, passwordField.value);
+    dispatch(setApiKey(apiKeyField.value));
     setIsSuccess(true);
+    setIsError(false);
   };
   return (
     <div className="relative">
