@@ -1,26 +1,12 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  mode: "jit",
-  purge: ["./src/**/*.{ts,tsx}"],
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
-  darkMode: "class",
-  theme: {
-    extend: {
-      colors: {
-        bg: {
-          primary: "#171717",
-        },
-        text: {
-          primary: "#ffffff",
-          pinkTransparent: "#EAB5FF70",
-          transparent: "#ffffff90",
-        },
-        components: {
-          primary: "#570B72",
-          primaryTransparent: "#570B7280",
-        },
-      },
+    content: [
+        "./app/**/*.{js,ts,jsx,tsx,mdx}",
+        "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+        "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    ],
+    theme: {
+        extend: {},
     },
-  },
-  variants: { extend: {} },
-  plugins: [],
-};
+    plugins: [],
+}

@@ -1,45 +1,30 @@
 {
-  "name": "chrome-extension-template-with-nextjs",
-  "private": true,
+  "name": "next-chrome-starter",
+  "version": "0.0.1",
+  "description": "Next.js Chrome Extension Starter, Demo Example by ibnzUK. https://github.com/ibnzUK/next-chrome-starter",
+  "main": "index.js",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "bundle": "webpack build --mode production --config ./webpack/webpack.config.js",
-    "export": "next build && next export -o extensions/dist && npm run bundle"
+    "build": "npm run prep",
+    "prep": "npm run exp && node out.js",
+    "exp": "next build && next export",
+    "run": "next start",
+    "dev": "next dev"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "@radix-ui/react-slot": "^1.0.2",
-    "class-variance-authority": "^0.7.0",
-    "embla-carousel-react": "^8.1.4",
-    "lucide-react": "^0.394.0",
-    "next": "^12.0.10",
-    "react": "^17.0.2",
-    "react-dom": "17.0.2",
-    "react-error-boundary": "^3.1.4",
-    "tailwind-merge": "^2.3.0"
+    "@types/node": "^22.10.5",
+    "@types/react": "^19.0.4",
+    "glob": "^10.2.3",
+    "next": "^13.4.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.7.3"
   },
   "devDependencies": {
-    "@types/chrome": "^0.0.164",
-    "@types/node": "16.11.7",
-    "@types/react": "17.0.35",
-    "@typescript-eslint/eslint-plugin": "^4.33.0",
-    "@typescript-eslint/parser": "^4.33.0",
-    "eslint": "7.32.0",
-    "eslint-config-next": "12.0.4",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-react": "^7.27.1",
-    "eslint-plugin-react-hooks": "^4.3.0",
-    "eslint-plugin-simple-import-sort": "^7.0.0",
-    "eslint-plugin-tailwindcss": "^1.17.2",
-    "prettier": "^2.4.1",
-    "tailwindcss": "^3.0.7",
-    "ts-loader": "^9.2.6",
-    "typescript": "4.5.2",
-    "webpack": "^5.64.1",
-    "webpack-cli": "^4.9.1"
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17"
   }
 }
