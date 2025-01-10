@@ -10,20 +10,33 @@
     "48": "/icons/icon48.png",
     "192": "/icons/icon192.png"
   },
-  "permissions": [],
+  "permissions": [
+    "storage"
+  ],
   "web_accessible_resources": [
     {
-      "resources": ["index.html"],
-      "matches": ["<all_urls>"]
+      "resources": [
+        "index.html"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
     }
   ],
   "content_scripts": [
     {
-      "matches": ["https://*/*", "http://*/*"],
-      "js": ["inject.js"]
+      "matches": [
+        "https://*/*",
+        "http://*/*"
+      ],
+      "js": [
+        "inject.js"
+      ]
     }
   ],
-  "host_permissions": ["<all_urls>"],
+  "host_permissions": [
+    "<all_urls>"
+  ],
   "action": {
     "default_popup": "index.html"
   }
