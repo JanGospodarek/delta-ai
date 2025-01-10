@@ -1,28 +1,45 @@
 {
-  "name": "delta-ext",
-  "version": "0.1.0",
+  "name": "chrome-extension-template-with-nextjs",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next build && next export"
+    "bundle": "webpack build --mode production --config ./webpack/webpack.config.js",
+    "export": "next build && next export -o extensions/dist && npm run bundle"
   },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.1.4"
+    "@radix-ui/react-slot": "^1.0.2",
+    "class-variance-authority": "^0.7.0",
+    "embla-carousel-react": "^8.1.4",
+    "lucide-react": "^0.394.0",
+    "next": "^12.0.10",
+    "react": "^17.0.2",
+    "react-dom": "17.0.2",
+    "react-error-boundary": "^3.1.4",
+    "tailwind-merge": "^2.3.0"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "eslint": "^9",
-    "eslint-config-next": "15.1.4",
-    "@eslint/eslintrc": "^3"
+    "@types/chrome": "^0.0.164",
+    "@types/node": "16.11.7",
+    "@types/react": "17.0.35",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "eslint": "7.32.0",
+    "eslint-config-next": "12.0.4",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-tailwindcss": "^1.17.2",
+    "prettier": "^2.4.1",
+    "tailwindcss": "^3.0.7",
+    "ts-loader": "^9.2.6",
+    "typescript": "4.5.2",
+    "webpack": "^5.64.1",
+    "webpack-cli": "^4.9.1"
   }
 }

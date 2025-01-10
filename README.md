@@ -8,7 +8,7 @@ This is CHROME extension for using AI Gemini agent in Delta directly.
     2. Open Chrome and navigate to chrome://extensions/.
     3. Enable "Developer mode" by toggling the switch in the top-right corner.
     4. Click on the "Load unpacked" button in the top-left corner.
-    5. Select the `out` folder from the cloned repository.
+    5. Select the `extensions` folder from the cloned repository.
 
 ## Setup
 
@@ -21,4 +21,3 @@ This is CHROME extension for using AI Gemini agent in Delta directly.
 
 If you spot any issues add Issue in Github.
 If you have some suggestions or improvements, feel free to create a PR.
-
