@@ -1,7 +1,16 @@
-import type { NextConfig } from "next";
+import type {NextConfig} from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+    reactStrictMode: true,
+    assetPrefix: process.env.NODE_ENV === 'production' ? '/.' : '',
+    output: 'export',
+    trailingSlash: true,
+    webpack(config, {isServer}) {
+        if (!isServer) {
+            config.devtool = 'source-map'; // Enable source maps
+        }
+        return config;
+    },
 };
 
 export default nextConfig;
