@@ -1,8 +1,8 @@
 // /** @type {import('next').NextConfig} */
 // const nextConfig = {
-//   assetPrefix: './out/next', // Prefix for static assets
-//   trailingSlash: true, // Ensures paths have trailing slashes for static export
-//   output: 'export', // Enables static file export (used with `next build` and `next export`)
+//   assetPrefix: './', // Replace _next with next in all references
+//   trailingSlash: true, // Ensures all routes end with a trailing slash for static builds
+//   output: 'export', // Ensures static export for Chrome extension
 // };
 //
 // module.exports = nextConfig;
