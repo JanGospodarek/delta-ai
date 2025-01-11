@@ -5,12 +5,14 @@ interface InitialState {
   apiKey: string;
   isAuthorized: boolean;
   alertData?: AlertData;
+  model: string;
 }
 
 const initialState: InitialState = {
   apiKey: '',
   isAuthorized: false,
   alertData: undefined,
+  model: '',
 };
 
 export const appSlice = createSlice({
@@ -31,8 +33,16 @@ export const appSlice = createSlice({
       state.isAuthorized = false;
       state.apiKey = '';
     },
+    setModel: (state, action: PayloadAction<string>) => {
+      state.model = action.payload;
+    },
   },
 });
 
-export const { setApiKey, setIsAuthorized, clearConfidential, setAlertData } =
-  appSlice.actions;
+export const {
+  setApiKey,
+  setIsAuthorized,
+  setModel,
+  clearConfidential,
+  setAlertData,
+} = appSlice.actions;
