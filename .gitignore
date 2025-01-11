@@ -14,8 +14,8 @@
 /coverage
 
 # next.jsd
-/.next/
-
+/.next
+.next
 
 # production
 /build
