@@ -1,2 +1,2 @@
 npm run build
-#mv ./out/_next ./out/next
+LC_ALL=C find "./out" -type f -exec sed -i '' 's/\/_next/\/next/g' {} +

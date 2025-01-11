@@ -1,6 +1,8 @@
-const HomeTitle = () => {
+import React from 'react';
+
+const AppTitle = () => {
   return (
-    <h1 className="flex gap-0.5 items-end text-3xl justify-center">
+    <h1 className="flex gap-0.5 items-end text-3xl justify-center ">
       Delta
       <svg width="40" height="40">
         <defs>
@@ -11,10 +13,11 @@ const HomeTitle = () => {
         </defs>
         <text
           x="0"
-          y="35"
+          y="32"
           fill="url(#gradient)"
-          fontSize="35"
+          fontSize="32"
           fontWeight="bold"
+          className="font-kanit"
         >
           AI
         </text>
@@ -22,4 +25,4 @@ const HomeTitle = () => {
     </h1>
   );
 };
-export default HomeTitle;
+export default AppTitle;

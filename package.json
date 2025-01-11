@@ -14,7 +14,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@nextui-org/alert": "^2.2.9",
     "@nextui-org/button": "^2.2.9",
+    "@nextui-org/divider": "^2.2.5",
     "@nextui-org/input": "^2.4.8",
     "@nextui-org/react": "^2.6.11",
     "@reduxjs/toolkit": "^2.5.0",

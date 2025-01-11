@@ -2,14 +2,16 @@ import React, { FormEvent, useState } from 'react';
 import { Input } from '@nextui-org/input';
 import { Button } from '@nextui-org/react';
 import { useForm } from 'react-hook-form';
-import useStorage from '../../../hooks/useStorage';
-import useInputController from '../../../hooks/useInputController';
-import SuccessOverlay from '../../../ui/SuccessOverlay';
-import usePostApi from '../../../hooks/api/usePostApi';
+import useStorage from '../../hooks/useStorage';
+import useInputController from '../../hooks/useInputController';
+import SuccessOverlay from '../../ui/SuccessOverlay';
+import usePostApi from '../../hooks/api/usePostApi';
 import { useDispatch } from 'react-redux';
-import { setApiKey } from '../../../../store/slices/appSlice';
+import { setApiKey, setIsAuthorized } from '../../../store/slices/appSlice';
+import { useRouter } from 'next/router';
 
-const HomeApiAddForm = () => {
+const AddKeyForm = () => {
+  const router = useRouter();
   const dispatch = useDispatch();
   const { encryptAndSave } = useStorage();
   const { post, loading } = usePostApi();
@@ -31,6 +33,7 @@ const HomeApiAddForm = () => {
     control,
     required: true,
   });
+
   const {
     field: passwordField,
     inputRef: passwordInputRef,
@@ -61,8 +64,12 @@ const HomeApiAddForm = () => {
     }
     encryptAndSave(apiKeyField.value, passwordField.value);
     dispatch(setApiKey(apiKeyField.value));
+    dispatch(setIsAuthorized(true));
     setIsSuccess(true);
     setIsError(false);
+    setTimeout(() => {
+      router.push('/');
+    }, 2000);
   };
   return (
     <div className="relative">
@@ -93,9 +100,13 @@ const HomeApiAddForm = () => {
             jest on poprawny!
           </p>
         )}
-        <SuccessOverlay open={isSuccess} setOpen={setIsSuccess} />
+        <SuccessOverlay
+          open={isSuccess}
+          setOpen={setIsSuccess}
+          message="Klucz zapisany 😎"
+        />
       </form>
     </div>
   );
 };
-export default HomeApiAddForm;
+export default AddKeyForm;
