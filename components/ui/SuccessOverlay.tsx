@@ -3,9 +3,10 @@ import React, { useEffect, useState } from 'react';
 interface Props {
   open: boolean;
   setOpen: (open: boolean) => void;
+  message: string;
 }
 
-const SuccessOverlay = ({ open, setOpen }: Props) => {
+const SuccessOverlay = ({ open, setOpen, message }: Props) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -31,7 +32,7 @@ const SuccessOverlay = ({ open, setOpen }: Props) => {
         opacity: isVisible ? 1 : 0,
       }}
     >
-      <p className="text-2xl text-white  font-bold ">Klucz zapisany 😎</p>
+      <p className="text-2xl text-white  font-bold ">{message}</p>
     </div>
   );
 };
