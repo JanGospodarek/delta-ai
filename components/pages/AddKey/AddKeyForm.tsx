@@ -7,7 +7,7 @@ import useInputController from '../../hooks/useInputController';
 import SuccessOverlay from '../../ui/SuccessOverlay';
 import usePostApi from '../../hooks/api/usePostApi';
 import { useDispatch } from 'react-redux';
-import { setApiKey, setIsAuthorized } from '../../../store/slices/appSlice';
+import { setIsAuthorized } from '../../../store/slices/appSlice';
 import { useRouter } from 'next/router';
 
 const AddKeyForm = () => {
@@ -63,7 +63,7 @@ const AddKeyForm = () => {
       return;
     }
     encryptAndSave(apiKeyField.value, passwordField.value);
-    dispatch(setApiKey(apiKeyField.value));
+    // dispatch(setApiKey(apiKeyField.value));
     dispatch(setIsAuthorized(true));
     setIsSuccess(true);
     setIsError(false);

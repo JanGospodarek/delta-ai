@@ -2,8 +2,12 @@ import React from 'react';
 import { useAppSelector } from '../../../../store/hooks';
 import HomeSummaryChip from './HomeSummaryChip';
 
-const HomeSummary = () => {
-  const { model, apiKey } = useAppSelector((state) => state.app);
+interface Props {
+  apiKey: string;
+}
+
+const HomeSummary = ({ apiKey }: Props) => {
+  const { model } = useAppSelector((state) => state.app);
   const parsedApiKey = apiKey ? apiKey.slice(0, 5) + '...' : '';
 
   return (

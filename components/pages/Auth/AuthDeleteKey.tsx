@@ -1,9 +1,6 @@
 import React from 'react';
 import { Button } from '@nextui-org/react';
-import {
-  clearConfidential,
-  setAlertData,
-} from '../../../store/slices/appSlice';
+import { setAlertData, setIsAuthorized } from '../../../store/slices/appSlice';
 import { useDispatch } from 'react-redux';
 import { STORAGE_API_KEY } from '../../../constants';
 import { useRouter } from 'next/router';
@@ -13,7 +10,7 @@ const AuthDeleteKey = () => {
   const dispatch = useDispatch();
   const handleDeleteKey = () => {
     localStorage.removeItem(STORAGE_API_KEY);
-    dispatch(clearConfidential());
+    dispatch(setIsAuthorized(false));
     dispatch(
       setAlertData({
         title: 'Usunięto klucz API',

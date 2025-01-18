@@ -248,6 +248,48 @@ __webpack_async_result__();
 
 /***/ }),
 
+/***/ 7626:
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Xn": () => (/* binding */ setAlertData),
+/* harmony export */   "Zc": () => (/* binding */ setIsAuthorized),
+/* harmony export */   "j1": () => (/* binding */ setModel),
+/* harmony export */   "tK": () => (/* binding */ appSlice)
+/* harmony export */ });
+/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3258);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__]);
+_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+
+const initialState = {
+    isAuthorized: false,
+    alertData: undefined,
+    model: ""
+};
+const appSlice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__.createSlice)({
+    name: "app",
+    initialState,
+    reducers: {
+        setIsAuthorized: (state, action)=>{
+            state.isAuthorized = action.payload;
+        },
+        setAlertData: (state, action)=>{
+            state.alertData = action.payload;
+        },
+        setModel: (state, action)=>{
+            state.model = action.payload;
+        }
+    }
+});
+const { setIsAuthorized , setModel , setAlertData  } = appSlice.actions;
+
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
+
+/***/ }),
+
 /***/ 6764:
 /***/ (() => {
 
@@ -302,7 +344,7 @@ module.exports = import("react-redux");;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [893,626], () => (__webpack_exec__(4178)));
+var __webpack_exports__ = __webpack_require__.X(0, [893], () => (__webpack_exec__(4178)));
 module.exports = __webpack_exports__;
 
 })();

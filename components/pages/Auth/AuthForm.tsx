@@ -7,11 +7,7 @@ import { Divider } from '@nextui-org/divider';
 import AuthDeleteKey from './AuthDeleteKey';
 import useStorage from '../../hooks/useStorage';
 import { useDispatch } from 'react-redux';
-import {
-  setAlertData,
-  setApiKey,
-  setIsAuthorized,
-} from '../../../store/slices/appSlice';
+import { setAlertData, setIsAuthorized } from '../../../store/slices/appSlice';
 import { useRouter } from 'next/router';
 
 const AuthForm = () => {
@@ -40,15 +36,13 @@ const AuthForm = () => {
     if (!result) return;
     try {
       const key = decryptAndRead(passwordField.value);
-      dispatch(setApiKey(key));
+      // dispatch(setApiKey(key));
       dispatch(setIsAuthorized(true));
 
       chrome.runtime.sendMessage(
         { action: 'set-api-key', apiKey: key },
         (response) => {
-          if (response.status === 'success') {
-            alert('Key decrypted and stored successfully!');
-          }
+          console.log(response);
         },
       );
 

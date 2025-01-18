@@ -1,3 +1,2 @@
-import { AlertData } from './_Alert';
-
-export { type AlertData };
+export * from './_Ext';
+export * from './_Alert';
