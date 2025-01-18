@@ -42,6 +42,16 @@ const AuthForm = () => {
       const key = decryptAndRead(passwordField.value);
       dispatch(setApiKey(key));
       dispatch(setIsAuthorized(true));
+
+      chrome.runtime.sendMessage(
+        { action: 'set-api-key', apiKey: key },
+        (response) => {
+          if (response.status === 'success') {
+            alert('Key decrypted and stored successfully!');
+          }
+        },
+      );
+
       void router.push('/');
     } catch (e) {
       dispatch(

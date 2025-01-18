@@ -6,9 +6,16 @@ import HomeSummary from '../components/pages/Home/HomeSummary/HomeSummary';
 
 export default function Home() {
   const router = useRouter();
-  const { isAuthorized, apiKey } = useAppSelector((state) => state.app);
+  const { isAuthorized } = useAppSelector((state) => state.app);
 
   useEffect(() => {
+    chrome.runtime.sendMessage(
+      { action: 'test', data: { test: 'test 12 3 3' } },
+      (response) => {
+        console.log(response);
+      },
+    );
+
     const apiKey = localStorage.getItem(STORAGE_API_KEY);
     if (apiKey && !isAuthorized)
       router.push('/auth'); // Redirect to the authentication page
